@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test
+END
+authentication_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/authentication_test.php
+END
+xml_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/xml_test.php
+END
+acceptance_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/acceptance_test.php
+END
+encoding_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/encoding_test.php
+END
+detached_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/detached_test.php
+END
+user_agent_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/user_agent_test.php
+END
+reflection_php5_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/reflection_php5_test.php
+END
+shell_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/shell_test.php
+END
+compatibility_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/compatibility_test.php
+END
+parsing_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/parsing_test.php
+END
+page_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/page_test.php
+END
+adapter_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/adapter_test.php
+END
+cookies_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/cookies_test.php
+END
+all_tests.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/all_tests.php
+END
+shell_tester_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/shell_tester_test.php
+END
+collector_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/collector_test.php
+END
+bad_test_suite.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/bad_test_suite.php
+END
+live_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/live_test.php
+END
+browser_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/browser_test.php
+END
+command_line_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/command_line_test.php
+END
+eclipse_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/eclipse_test.php
+END
+frames_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/frames_test.php
+END
+test_with_parse_error.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/test_with_parse_error.php
+END
+tag_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/tag_test.php
+END
+interfaces_test_php5_1.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/interfaces_test_php5_1.php
+END
+unit_tester_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/unit_tester_test.php
+END
+interfaces_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/interfaces_test.php
+END
+socket_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/socket_test.php
+END
+reflection_php4_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/reflection_php4_test.php
+END
+url_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/url_test.php
+END
+unit_tests.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/unit_tests.php
+END
+errors_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/errors_test.php
+END
+web_tester_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/web_tester_test.php
+END
+http_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/http_test.php
+END
+php_parser_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/php_parser_test.php
+END
+remote_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/remote_test.php
+END
+exceptions_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/exceptions_test.php
+END
+simpletest_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/simpletest_test.php
+END
+form_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/form_test.php
+END
+dumper_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/dumper_test.php
+END
+visual_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/visual_test.php
+END
+mock_objects_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/mock_objects_test.php
+END
+expectation_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/expectation_test.php
+END
+parse_error_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/parse_error_test.php
+END
+autorun_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/1328/CampusCrawler/Website/FacebookInteraction/simpletest/test/autorun_test.php
+END

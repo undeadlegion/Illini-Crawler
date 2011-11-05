@@ -1,0 +1,40 @@
+package com.ccrawl.android;
+
+import java.util.List;
+import java.util.Map;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.widget.ListView;
+
+import com.ccrawl.android.fetchers.BarsFetcher;
+import com.ccrawl.android.fetchers.EventsFetcher;
+import com.ccrawl.android.models.Bar;
+import com.ccrawl.android.models.Event;
+
+public class PublicEventsActivity extends EventsActivity {
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	super.onCreate(savedInstanceState);
+    	
+    	// load up the bars for caching later
+    	List<Bar> bars = BarsFetcher.getAll();
+    	Map<String, Bar> cache = ((CampusCrawlerApp)getApplication() ).bars;
+    	
+    	for(Bar bar : bars){
+    		cache.put( bar.getId() , bar);
+    	}
+    }
+	@Override
+	public List<Event> getEvents() {
+		return EventsFetcher.getPublic();
+	}
+	
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	super.onCreateOptionsMenu(menu);
+        menu.findItem(R.id.publicCrawlsMenuItem).setEnabled(false);
+        return true;
+    }
+}

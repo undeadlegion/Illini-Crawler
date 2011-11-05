@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units
+END
+Decade.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Decade.java
+END
+Month.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Month.java
+END
+Year.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Year.java
+END
+Day.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Day.java
+END
+JustNow.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/JustNow.java
+END
+Millennium.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Millennium.java
+END
+TimeUnitComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/TimeUnitComparator.java
+END
+Minute.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Minute.java
+END
+Century.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Century.java
+END
+Second.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Second.java
+END
+Week.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Week.java
+END
+Hour.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Hour.java
+END
+Millisecond.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/units/Millisecond.java
+END

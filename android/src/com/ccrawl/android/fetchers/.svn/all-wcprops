@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repo/!svn/ver/109/CampusCrawler/src/com/ccrawl/android/fetchers
+END
+Constants.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repo/!svn/ver/108/CampusCrawler/src/com/ccrawl/android/fetchers/Constants.java
+END
+EventsFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repo/!svn/ver/107/CampusCrawler/src/com/ccrawl/android/fetchers/EventsFetcher.java
+END
+BarsFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repo/!svn/ver/109/CampusCrawler/src/com/ccrawl/android/fetchers/BarsFetcher.java
+END
+BarsForEventFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repo/!svn/ver/108/CampusCrawler/src/com/ccrawl/android/fetchers/BarsForEventFetcher.java
+END

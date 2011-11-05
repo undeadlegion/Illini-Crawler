@@ -1,0 +1,207 @@
+//
+//  MyCrawlsViewController.m
+//  CampusCrawler
+//
+//  Created by James Lubowich on 2/5/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "MyCrawlsViewController.h"
+#import "EventDetailViewController.h"
+#import "EventInfoViewController.h"
+#import "EventMapViewController.h"
+#import "EventSegmentsController.h"
+#import "Event.h"
+#import "BarsFetcher.h"
+#import "EventsFetcher.h"
+
+@implementation MyCrawlsViewController
+@synthesize eventSegmentsController, barsDictionary, eventsList;
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.title = @"My Crawls";
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm/dd/yy"];
+    
+    eventSegmentsController = [[EventSegmentsController alloc] initWithNavigationController:self.navigationController ];
+    
+    //load data from server
+    barsFetcher = [[BarsFetcher alloc] init];
+    eventsFetcher = [[EventsFetcher alloc] init];
+    
+//    NSString *barsPath = [[NSBundle mainBundle] pathForResource:@"bars" ofType:@"xml"];
+    NSString *eventsPath = [[NSBundle mainBundle] pathForResource:@"events" ofType:@"xml"];
+
+    serverURL = [[NSURL alloc] initWithString:serverString];    
+
+//    self.barsDictionary = [barsFetcher fetchBarsFromPath:barsPath relativeTo:serverURL];
+    self.eventsList = [eventsFetcher fetchEventsFromPath:eventsPath relativeTo:serverURL];
+        
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Table view data source
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [eventsList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+        
+    Event *cellEvent = [eventsList objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    cell.textLabel.text = cellEvent.title;
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:cellEvent.date];
+    
+    return cell;
+}
+
+<<<<<<< .mine
+=======
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    if([elementName isEqualToString:@"Event"]){
+        currentEvent = [[Event alloc] init];
+        NSString *eventID = [NSString stringWithString:[attributeDict objectForKey:@"id"]];
+        currentEvent.eventId = eventID;
+        NSLog(@"EventID: %@", eventID);
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    if([elementName isEqualToString:@"Event"]) {
+        [eventsList addObject:currentEvent];
+        [currentEvent release];
+        currentEvent = nil;
+    }
+    if([elementName isEqualToString:@"title"]){
+        currentEvent.title = currentStringValue;
+    }
+    if([elementName isEqualToString:@"date"]){
+        currentEvent.date = [dateFormatter dateFromString:currentStringValue];
+    }
+    if([elementName isEqualToString:@"description"]){
+        currentEvent.description = currentStringValue;
+    }
+
+    [currentStringValue release];
+    currentStringValue = nil;
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if (!currentStringValue) {
+        // currentStringValue is an NSMutableString instance variable
+        currentStringValue = [[NSMutableString alloc] initWithCapacity:50];
+    }
+    if([string hasPrefix:@"\n"])
+        return;
+    [currentStringValue appendString:string];
+    
+}
+
+- (void)parseXMLFile:(NSString *)pathToFile relativeTo:(NSURL *)baseURL{
+    BOOL success;
+    
+//    NSURL *xmlURL = [NSURL URLWithString:pathToFile relativeToURL:baseURL];
+    NSURL *xmlURL = [NSURL fileURLWithPath:pathToFile];
+    
+    if (parser) // parser is an NSXMLParser instance variable
+        [parser release];
+    
+    parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+    [parser setDelegate:self];
+    [parser setShouldResolveExternalEntities:YES];
+    success = [parser parse]; // return value not used
+    // if not successful, delegate is informed of error
+}
+
+>>>>>>> .r1773
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Event *selectedEvent = [eventsList objectAtIndex:indexPath.row];
+    eventSegmentsController.currentEvent = selectedEvent;
+    eventSegmentsController.barsDictionary = barsDictionary;
+    [eventSegmentsController pushFirstViewController];
+}
+
+@end

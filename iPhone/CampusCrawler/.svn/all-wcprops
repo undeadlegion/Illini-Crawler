@@ -1,0 +1,665 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/sp11-cs428/!svn/ver/4050/CampusCrawler/iPhone/CampusCrawler/CampusCrawler
+END
+main.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/sp11-cs428/!svn/ver/73/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/main.m
+END
+112-group.png
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/112-group.png
+END
+BarsFetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsFetcher.m
+END
+customNavigationController.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/2848/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/customNavigationController.h
+END
+blackArrow@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/blackArrow@2x.png
+END
+NSObject+SBJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/NSObject+SBJSON.h
+END
+NSString+SBJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/NSString+SBJSON.h
+END
+Icon
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Icon
+END
+customNavigationController.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/2848/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/customNavigationController.m
+END
+SelectGuestsViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sp11-cs428/!svn/ver/4049/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SelectGuestsViewController.xib
+END
+WallPost.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/WallPost.h
+END
+NSObject+SBJSON.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/NSObject+SBJSON.m
+END
+NSString+SBJSON.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/NSString+SBJSON.m
+END
+SelectGuestsViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/4961/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SelectGuestsViewController.h
+END
+BarCrawlsViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarCrawlsViewController.xib
+END
+WallPost.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/WallPost.m
+END
+SecondViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/1502/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SecondViewController.h
+END
+SBJsonParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJsonParser.h
+END
+SelectGuestsViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/4961/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SelectGuestsViewController.m
+END
+SecondViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/sp11-cs428/!svn/ver/3214/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SecondViewController.m
+END
+BarCrawlsViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarCrawlsViewController.h
+END
+SBJsonParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJsonParser.m
+END
+BarDetailViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarDetailViewController.xib
+END
+Event.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Event.h
+END
+man_48.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/man_48.png
+END
+eventxmlformat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/sp11-cs428/!svn/ver/1771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/eventxmlformat.xml
+END
+BarCrawlsViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarCrawlsViewController.m
+END
+Event.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Event.m
+END
+EventCommentsViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventCommentsViewController.h
+END
+whiteArrow.png
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/whiteArrow.png
+END
+SBJsonBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJsonBase.h
+END
+BarsForEventViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/sp11-cs428/!svn/ver/4946/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsForEventViewController.xib
+END
+EventSegmentsController.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/2848/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventSegmentsController.h
+END
+EventWallViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventWallViewController.xib
+END
+EventCommentsViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventCommentsViewController.m
+END
+EventInfoViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/4769/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventInfoViewController.h
+END
+SBJsonBase.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJsonBase.m
+END
+SBJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJSON.h
+END
+BarsForEventViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsForEventViewController.h
+END
+blueArrow.png
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/blueArrow.png
+END
+EventSegmentsController.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/3042/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventSegmentsController.m
+END
+FBLoginDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBLoginDialog.h
+END
+EventInfoViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventInfoViewController.m
+END
+SBJSON.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJSON.m
+END
+BarsForEventViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsForEventViewController.m
+END
+FBLoginDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBLoginDialog.m
+END
+FBDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBDialog.h
+END
+Facebook.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/1797/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Facebook.h
+END
+FeedPost.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/3817/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FeedPost.h
+END
+Constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Constants.h
+END
+FBLoginButton.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBLoginButton.h
+END
+FBDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBDialog.m
+END
+BarForEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarForEvent.h
+END
+EventMapViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/3214/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventMapViewController.h
+END
+Facebook.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/1797/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Facebook.m
+END
+FeedPost.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/3817/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FeedPost.m
+END
+FeedbackViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sp11-cs428/!svn/ver/5108/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FeedbackViewController.xib
+END
+bulb_off_24.png
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/bulb_off_24.png
+END
+Constants.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Constants.m
+END
+FBLoginButton.m
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBLoginButton.m
+END
+BarForEvent.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarForEvent.m
+END
+EventMapViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventMapViewController.m
+END
+FeedbackViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/5108/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FeedbackViewController.h
+END
+bulb_off_64.png
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/bulb_off_64.png
+END
+FeedbackViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FeedbackViewController.m
+END
+bars.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sp11-cs428/!svn/ver/3373/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/bars.xml
+END
+Reachability.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/5108/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Reachability.h
+END
+BarsForEventFetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsForEventFetcher.h
+END
+whiteArrow@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/whiteArrow@2x.png
+END
+Bar.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Bar.h
+END
+CampusCrawlerAppDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/CampusCrawlerAppDelegate.h
+END
+EventsFetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sp11-cs428/!svn/ver/1797/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventsFetcher.h
+END
+EGORefreshTableHeaderView.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EGORefreshTableHeaderView.h
+END
+Reachability.m
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/5108/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Reachability.m
+END
+BarsForEventFetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsForEventFetcher.m
+END
+Bar.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/Bar.m
+END
+CampusCrawlerAppDelegate.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/CampusCrawlerAppDelegate.m
+END
+EventsFetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventsFetcher.m
+END
+EGORefreshTableHeaderView.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/4946/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EGORefreshTableHeaderView.m
+END
+man_24.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/man_24.png
+END
+EventCommentsViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventCommentsViewController.xib
+END
+man_64.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/man_64.png
+END
+blackArrow.png
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/blackArrow.png
+END
+grayArrow@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/grayArrow@2x.png
+END
+BarDetailViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarDetailViewController.h
+END
+EventInfoViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/5108/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventInfoViewController.xib
+END
+SBJsonWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJsonWriter.h
+END
+BarDetailViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarDetailViewController.m
+END
+FBRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBRequest.h
+END
+SBJsonWriter.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/SBJsonWriter.m
+END
+WallPostCell.xib
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/3816/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/WallPostCell.xib
+END
+EventWallViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/3816/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventWallViewController.h
+END
+FBConnect.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBConnect.h
+END
+CampusCrawler-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/5913/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/CampusCrawler-Info.plist
+END
+FBRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/FBRequest.m
+END
+EventWallViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/sp11-cs428/!svn/ver/4961/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventWallViewController.m
+END
+EventGuestsViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/sp11-cs428/!svn/ver/4771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventGuestsViewController.xib
+END
+commentIcon.png
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sp11-cs428/!svn/ver/3816/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/commentIcon.png
+END
+EventMapViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/sp11-cs428/!svn/ver/3214/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventMapViewController.xib
+END
+JSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/sp11-cs428/!svn/ver/357/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/JSON.h
+END
+barsForEvent.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/3373/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/barsForEvent.xml
+END
+blueArrow@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/blueArrow@2x.png
+END
+grayArrow.png
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/grayArrow.png
+END
+EventGuestsViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/4050/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventGuestsViewController.h
+END
+111-user.png
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/sp11-cs428/!svn/ver/4930/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/111-user.png
+END
+events.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sp11-cs428/!svn/ver/3373/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/events.xml
+END
+EventGuestsViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/sp11-cs428/!svn/ver/4968/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/EventGuestsViewController.m
+END
+CampusCrawler-Prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/sp11-cs428/!svn/ver/1771/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/CampusCrawler-Prefix.pch
+END
+bulb_off_48.png
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/sp11-cs428/!svn/ver/5353/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/bulb_off_48.png
+END
+BarsFetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sp11-cs428/!svn/ver/1797/CampusCrawler/iPhone/CampusCrawler/CampusCrawler/BarsFetcher.h
+END

@@ -1,0 +1,102 @@
+//
+//  EventSegmentsController.m
+//  CampusCrawler
+//
+//  Created by James Lubowich on 2/22/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "EventSegmentsController.h"
+#import "EventDetailViewController.h"
+#import "EventInfoViewController.h"
+#import "EventMapViewController.h"
+#import "Event.h"
+
+#define kCustomButtonHeight		30.0
+
+@interface EventSegmentsController ()
+@property (nonatomic, retain, readwrite) UINavigationController *navigationController;
+@property (nonatomic, retain, readwrite) NSArray *viewControllers;
+@end
+
+@implementation EventSegmentsController
+@synthesize navigationController, viewControllers, viewToggle;
+@synthesize serverURL, currentEvent, barsDictionary;
+
+- (id)initWithNavigationController:(UINavigationController *)aNavigationController
+                   viewControllers:(NSArray *)theViewControllers{
+    
+    if((self = [super init])){
+        self.navigationController = aNavigationController;
+        self.viewControllers = theViewControllers;
+    }
+    return self;
+}
+- (id)initWithNavigationController:(UINavigationController *)theNavigationController{
+    if((self = [super init])){
+        self.navigationController = theNavigationController;
+        [self initSegmentViewControllers];
+        [self initViewToggle];
+    }
+    return self;
+}
+
+- (void)indexDidChangeForSegmentedControl:(UISegmentedControl *)segmentedControl{
+
+    NSUInteger index = segmentedControl.selectedSegmentIndex;
+    UIViewController *incomingViewController = [viewControllers objectAtIndex:index];
+    incomingViewController.navigationItem.titleView = segmentedControl;
+    incomingViewController.navigationItem.prompt = @"View Event Details";
+    ((EventSegmentsController*)incomingViewController).currentEvent = currentEvent;
+    
+    [navigationController popViewControllerAnimated:NO];
+    [navigationController pushViewController:incomingViewController animated:NO];
+
+}
+
+- (void)pushFirstViewController{
+    
+    EventDetailViewController *firstViewController = (EventDetailViewController *)[viewControllers objectAtIndex:viewToggle.selectedSegmentIndex];
+    firstViewController.currentEvent = currentEvent;
+    firstViewController.navigationItem.prompt = @"View Event Details";
+    firstViewController.navigationItem.titleView = viewToggle;
+    
+    [navigationController pushViewController:firstViewController animated:YES];
+}
+
+- (void)popViewControllers: (id)sender{
+    NSLog(@"Boom Bitch");
+}
+- (void)initViewToggle{
+    
+    //change to the titles of the views
+    viewToggle = [[UISegmentedControl alloc]
+                  initWithItems:[NSArray arrayWithObjects:@"Itenerary",
+                                 @"Info", @"Map", nil]];
+    
+    viewToggle.segmentedControlStyle = UISegmentedControlStyleBar;
+    viewToggle.frame = CGRectMake(0, 0, 400, kCustomButtonHeight);
+    viewToggle.selectedSegmentIndex = 0;
+    [viewToggle addTarget:self action:@selector(indexDidChangeForSegmentedControl:)
+         forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)initSegmentViewControllers{
+    EventDetailViewController *detailViewController = [[[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil] autorelease];
+    EventInfoViewController *infoViewController = [[[EventInfoViewController alloc] initWithNibName:@"EventInfoViewController" bundle:nil] autorelease];
+    EventMapViewController *mapViewController = [[[EventMapViewController alloc] initWithNibName:@"EventMapViewController" bundle:nil] autorelease];
+    
+    viewControllers = [[NSArray alloc] initWithObjects:detailViewController,infoViewController, mapViewController,nil];
+}
+
+- (void)dealloc
+{
+    [navigationController release];
+    [viewControllers release];
+    [serverURL release];
+    [currentEvent release];
+    [barsDictionary release];
+    [viewToggle release];
+    [super dealloc];
+}
+@end

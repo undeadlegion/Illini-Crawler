@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'CampusCrawlerTests' target in the 'CampusCrawlerTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#import "Constants.h"
+#endif

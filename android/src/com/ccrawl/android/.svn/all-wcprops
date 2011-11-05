@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repo/!svn/ver/109/CampusCrawler/src/com/ccrawl/android
+END
+CampusCrawlerApp.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repo/!svn/ver/109/CampusCrawler/src/com/ccrawl/android/CampusCrawlerApp.java
+END
+EventActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repo/!svn/ver/107/CampusCrawler/src/com/ccrawl/android/EventActivity.java
+END
+EventBarsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repo/!svn/ver/109/CampusCrawler/src/com/ccrawl/android/EventBarsActivity.java
+END
+EventsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repo/!svn/ver/107/CampusCrawler/src/com/ccrawl/android/EventsActivity.java
+END
+EventListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repo/!svn/ver/107/CampusCrawler/src/com/ccrawl/android/EventListAdapter.java
+END
+MyEventsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repo/!svn/ver/107/CampusCrawler/src/com/ccrawl/android/MyEventsActivity.java
+END
+PublicEventsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repo/!svn/ver/109/CampusCrawler/src/com/ccrawl/android/PublicEventsActivity.java
+END

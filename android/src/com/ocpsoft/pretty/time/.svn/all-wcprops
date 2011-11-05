@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time
+END
+Duration.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/Duration.java
+END
+TimeFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/TimeFormat.java
+END
+AbstractTimeUnit.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/AbstractTimeUnit.java
+END
+PrettyTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/PrettyTime.java
+END
+BasicTimeFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/BasicTimeFormat.java
+END
+TimeUnit.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repo/!svn/ver/106/CampusCrawler/src/com/ocpsoft/pretty/time/TimeUnit.java
+END

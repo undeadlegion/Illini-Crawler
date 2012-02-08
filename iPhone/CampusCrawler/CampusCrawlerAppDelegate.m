@@ -40,7 +40,7 @@ NSString *campusCrawlerId = @"193718833988727";
         [defaults synchronize];
     }
     
-    facebook = [[Facebook alloc] initWithAppId:campus_crawlerId];
+    facebook = [[Facebook alloc] initWithAppId:campus_crawlerId andDelegate:nil];
     
     NSString *accessToken = [defaults valueForKey:@"Access Token"];
     NSDate *expirationDate = [defaults valueForKey:@"Expiration Date"];
@@ -94,34 +94,31 @@ NSString *campusCrawlerId = @"193718833988727";
     }
 }
 - (void)loadBars{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
+    @autoreleasepool {    
 
-    BarsFetcher *barsFetcher = [[[BarsFetcher alloc] init] autorelease];
-    NSString *barsPath;
-    NSURL *serverURL = [[[NSURL alloc] initWithString:serverString] autorelease];    
+        BarsFetcher *barsFetcher = [[BarsFetcher alloc] init];
+        NSString *barsPath;
+        NSURL *serverURL = [[NSURL alloc] initWithString:serverString];    
 
-    //load from server
-    if(useServer){
-        NSLog(@"Loading Bars from Server");
-        barsPath = barRequestString;
+        //load from server
+        if(useServer){
+            NSLog(@"Loading Bars from Server");
+            barsPath = barRequestString;
+        }
+        //load from disk
+        else{
+            NSLog(@"Loading Bars from Disk");
+            barsPath = [[NSBundle mainBundle] pathForResource:@"bars" ofType:@"xml"];
+        }
+
+        self.barsDictionary = [barsFetcher fetchBarsFromPath:barsPath relativeTo:serverURL isURL:useServer];
     }
-    //load from disk
-    else{
-        NSLog(@"Loading Bars from Disk");
-        barsPath = [[NSBundle mainBundle] pathForResource:@"bars" ofType:@"xml"];
-    }
-
-    self.barsDictionary = [barsFetcher fetchBarsFromPath:barsPath relativeTo:serverURL isURL:useServer];
-    [pool release];
 }
 
 - (void) showAlert:(NSString*)pushmessage withTitle:(NSString*)title
 {
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:pushmessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
-    if (alertView) {
-        [alertView release];
-    }
 }
 
 // Handle the notificaton when the app is running
@@ -184,14 +181,6 @@ NSString *campusCrawlerId = @"193718833988727";
      */
 }
 
-- (void)dealloc
-{
-    [_window release];
-    [_tabBarController release];
-    [facebook release];
-    [barsDictionary release];
-    [super dealloc];
-}
 
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController

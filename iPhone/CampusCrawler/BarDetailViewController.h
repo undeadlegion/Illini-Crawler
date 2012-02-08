@@ -13,10 +13,10 @@
     Bar *currentBar;
     NSString *currentDateId;
 }
-@property (nonatomic, retain) IBOutlet UIView *headerView;
-@property (nonatomic, retain) IBOutlet UIImageView *headerImage;
-@property (nonatomic, retain) IBOutlet UILabel *headerLabel;
-@property (nonatomic, retain) Bar *currentBar;
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+@property (nonatomic, strong) IBOutlet UIImageView *headerImage;
+@property (nonatomic, strong) IBOutlet UILabel *headerLabel;
+@property (nonatomic, strong) Bar *currentBar;
 @property (nonatomic, copy) NSString *currentDateId;
 
 - (CGFloat)getMessageHeight:(NSString *)text;

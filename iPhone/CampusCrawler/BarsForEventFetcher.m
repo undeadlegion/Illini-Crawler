@@ -30,27 +30,19 @@
     return self;
 }
 
-- (void)dealloc{
-    [currentEvent release];
-    [currentEventDateComponents release];
-    [serverURL release];
-    [dateFormatter release];
-    [parser release];
-    [super dealloc];
-}
 
 - (NSArray *)fetchEventBarsFromPath:(NSString *)path relativeTo:(NSURL *)baseURL withEvent:(Event *)event isURL:(BOOL)url{
     barsForEventList = [[NSMutableArray alloc] init];
     self.currentEvent = event;
     
     //set the event's date components
-    self.currentEventDateComponents = [[[NSDateComponents alloc] init] autorelease];
+    self.currentEventDateComponents = [[NSDateComponents alloc] init];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     unsigned unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit | NSYearCalendarUnit;
-    currentEventDateComponents = [[calendar components:unitFlags fromDate:currentEvent.date] retain];
+    currentEventDateComponents = [calendar components:unitFlags fromDate:currentEvent.date];
    
      [self parseXMLFile:path relativeTo:baseURL isURL:url];
-    return [barsForEventList autorelease];
+    return barsForEventList;
 }
 
 
@@ -68,7 +60,6 @@
     if([elementName isEqualToString:@"Bar"]) {
         
         [barsForEventList addObject:currentBarForEvent];
-        [currentBarForEvent release];
         currentBarForEvent = nil;
     }
     if([elementName isEqualToString:@"time"]){
@@ -79,7 +70,6 @@
         currentBarForEvent.specials = currentStringValue;
     }
     
-    [currentStringValue release];
     currentStringValue = nil;
 }
 
@@ -101,8 +91,6 @@
     else
         xmlURL = [NSURL fileURLWithPath:pathToFile];
     
-    if (parser) // parser is an NSXMLParser instance variable
-        [parser release];
     
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     [parser setDelegate:self];

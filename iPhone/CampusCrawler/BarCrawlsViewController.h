@@ -38,18 +38,18 @@
     NSDate *lastUpdated;
 }
 
-@property (nonatomic, retain) EventSegmentsController *eventSegmentsController;
-@property (nonatomic, retain) NSArray *eventsList;
-@property (nonatomic, retain) NSMutableArray *currentEvents;
-@property (nonatomic, retain) NSMutableArray *pastEvents;
-@property (nonatomic, retain) NSDictionary *barsDictionary;
-@property (nonatomic, retain) IBOutlet UIView *facebookView;
-@property (nonatomic, retain) IBOutlet FBLoginButton *fbLoginButton;
-@property (nonatomic, retain) IBOutlet UITableView *myTableView;
-@property (nonatomic, retain) IBOutlet UIView *combinedView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
-@property (nonatomic, retain) NSDate *lastUpdated;
+@property (nonatomic, strong) EventSegmentsController *eventSegmentsController;
+@property (nonatomic, strong) NSArray *eventsList;
+@property (nonatomic, strong) NSMutableArray *currentEvents;
+@property (nonatomic, strong) NSMutableArray *pastEvents;
+@property (nonatomic, strong) NSDictionary *barsDictionary;
+@property (nonatomic, strong) IBOutlet UIView *facebookView;
+@property (nonatomic, strong) IBOutlet FBLoginButton *fbLoginButton;
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) IBOutlet UIView *combinedView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) IBOutlet UILabel *loadingLabel;
+@property (nonatomic, strong) NSDate *lastUpdated;
 
 - (IBAction)fbButtonClick:(id)sender;
 - (void)loadEvents;

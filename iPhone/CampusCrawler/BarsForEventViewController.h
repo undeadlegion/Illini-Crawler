@@ -27,13 +27,13 @@
     UITableView *myTableView;
 }
 
-@property (nonatomic, retain) Event *currentEvent;
+@property (nonatomic, strong) Event *currentEvent;
 @property (nonatomic, copy) NSURL *serverURL;
-@property (nonatomic, retain) NSDictionary *barsDictionary;
-@property (nonatomic, retain) NSMutableArray *pastBars;
-@property (nonatomic, retain) NSMutableArray *currentBars;
-@property (nonatomic, retain) NSDate *lastUpdated;
-@property (nonatomic, retain) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) NSDictionary *barsDictionary;
+@property (nonatomic, strong) NSMutableArray *pastBars;
+@property (nonatomic, strong) NSMutableArray *currentBars;
+@property (nonatomic, strong) NSDate *lastUpdated;
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
 
 - (void)loadBarsForEvent;
 - (void)sortBarsForEvent;

@@ -23,7 +23,7 @@
 - (NSDictionary *)fetchBarsFromPath:(NSString *)path relativeTo:(NSURL *)baseURL isURL:(BOOL)url{
     barsDictionary = [[NSMutableDictionary alloc] init];
     [self parseXMLFile:path relativeTo:baseURL isURL:url];
-    return [barsDictionary autorelease];
+    return barsDictionary;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
@@ -37,7 +37,6 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
     if([elementName isEqualToString:@"Bar"]) {
         [barsDictionary setObject:currentBar forKey:currentBar.barId];
-        [currentBar release];
         currentBar = nil;
     }
     if([elementName isEqualToString:@"name"]){
@@ -71,7 +70,6 @@
         currentBar.latitude = [currentStringValue doubleValue];
     }
 
-    [currentStringValue release];
     currentStringValue = nil;
 }
 
@@ -92,8 +90,6 @@
     else
         xmlURL = [NSURL fileURLWithPath:pathToFile];
     
-    if (parser) // parser is an NSXMLParser instance variable
-        [parser release];
     
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     [parser setDelegate:self];
@@ -102,8 +98,4 @@
                               // if not successful, delegate is informed of error
 }
 
-- (void)dealloc{
-    [serverURL release];
-    [super dealloc];
-}
 @end

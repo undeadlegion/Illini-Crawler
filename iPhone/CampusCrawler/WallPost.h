@@ -15,8 +15,8 @@
     NSArray *comments;
 }
 
-@property (nonatomic, retain) NSString *postId;
+@property (nonatomic, strong) NSString *postId;
 @property (nonatomic) int numComments;
-@property (nonatomic, retain) NSArray *comments;
+@property (nonatomic, strong) NSArray *comments;
 
 @end

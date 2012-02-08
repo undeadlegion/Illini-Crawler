@@ -23,15 +23,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [alphabet release];
-    [guests release];
-    [myTableView release];
-    [spinner release];
-    [loadingLabel release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -142,7 +133,7 @@
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         return cell;
     }
@@ -152,7 +143,7 @@
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         
         NSInteger startingIndex = [[guestIndices objectAtIndex:indexPath.section] intValue];
@@ -197,7 +188,6 @@
     
     guests = [[mutableGuests sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] copy];
     
-    [mutableGuests release];
     
     [self populateGuestsSectionAndIndices:guests];
     
@@ -211,23 +201,23 @@
 #pragma mark - Instance Methods
 
 - (void)loadGuests {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
+    @autoreleasepool {    
     
-    NSLog(@"Requesting from facebook");
-    
-    while (!retrievedResults) {
+        NSLog(@"Requesting from facebook");
+        
+        while (!retrievedResults) {
 //        NSLog(@"waiting...");
-    }
-    
-    NSLog(@"Done Requesting from facebook");
-    
-    [myTableView reloadData];
-    
+        }
+        
+        NSLog(@"Done Requesting from facebook");
+        
+        [myTableView reloadData];
+        
 //    myTableView.hidden = NO;
-    [spinner stopAnimating];
-    spinner.hidden = YES;
-    loadingLabel.hidden = YES;
-    [pool release];
+        [spinner stopAnimating];
+        spinner.hidden = YES;
+        loadingLabel.hidden = YES;
+    }
 }
 
 - (void)setTitleFromGuestType {
@@ -317,7 +307,6 @@
         
         
         guestIndices = [mutableGuestIndices copy];
-        [mutableGuestSectionSizes release];
     }
     else {
         NSMutableArray *mutableGuestSectionSizes = [[NSMutableArray alloc] init];

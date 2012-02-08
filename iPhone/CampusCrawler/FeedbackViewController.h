@@ -11,8 +11,8 @@
 @interface FeedbackViewController : UIViewController <UITextViewDelegate> {
     CGRect keyboardBounds;
 }
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UITextView *feedbackView;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UITextView *feedbackView;
 
 - (IBAction)pressedSend:(id)sender;
 - (void)scrollViewToCenterOfScreen:(UIView *)theView; 

@@ -10,7 +10,7 @@
 #import "WallPost.h"
 #import "CampusCrawlerAppDelegate.h"
 
-@interface EventCommentsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,FBRequestDelegate,FBSessionDelegate> {
+@interface EventCommentsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,FBRequestDelegate> {
     UITableViewCell *wallPostCell;
     WallPost *wallPost;
     
@@ -21,11 +21,11 @@
     UILabel *loadingLabel;
 }
 
-@property (nonatomic, retain) IBOutlet UITableViewCell *wallPostCell;
-@property (nonatomic, retain) IBOutlet WallPost *wallPost;
-@property (nonatomic, retain) IBOutlet UITableView *myTableView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
+@property (nonatomic, strong) IBOutlet UITableViewCell *wallPostCell;
+@property (nonatomic, strong) IBOutlet WallPost *wallPost;
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) IBOutlet UILabel *loadingLabel;
 
 - (void)loadComments;
 

@@ -68,18 +68,5 @@
     return description;    
 }
 
-- (void)dealloc{
-    [barId release];
-    [name release];
-    [address release];
-    [description release];
-    [website release];
-    [quickLogoPath release];
-    [detailedLogoPath release];
-    [quickLogo release];
-    [detailedLogo release];
-    [specials release];
-    [super dealloc];    
-}
 
 @end

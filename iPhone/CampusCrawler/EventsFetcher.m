@@ -23,7 +23,7 @@
 }
 
 - (NSArray *)fetchEventsFromPath:(NSString *)path relativeTo:(NSURL *)baseURL isURL:(BOOL)url{
-    eventsList = [[[NSMutableArray alloc] init] autorelease];
+    eventsList = [[NSMutableArray alloc] init];
     [self parseXMLFile:path relativeTo:baseURL isURL:url];
     return eventsList;
 }
@@ -41,7 +41,6 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
     if([elementName isEqualToString:@"Event"]) {
         [eventsList addObject:currentEvent];
-        [currentEvent release];
         currentEvent = nil;
     }
     if([elementName isEqualToString:@"creatorid"]){
@@ -68,7 +67,6 @@
         currentEvent.privacy = [currentStringValue boolValue];
     }
     
-    [currentStringValue release];
     currentStringValue = nil;
 }
 
@@ -91,17 +89,11 @@
     else
         xmlURL = [NSURL fileURLWithPath:pathToFile];
     
-    if (parser) // parser is an NSXMLParser instance variable
-        [parser release];
     
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     [parser setDelegate:self];
     [parser setShouldResolveExternalEntities:YES];
     success = [parser parse]; // return value not used
                               // if not successful, delegate is informed of error
-}
-- (void)dealloc{
-    [serverURL release];
-    [super dealloc];
 }
 @end

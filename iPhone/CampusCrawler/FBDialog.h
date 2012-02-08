@@ -26,16 +26,14 @@
  */
 
 @interface FBDialog : UIView <UIWebViewDelegate> {
-  id<FBDialogDelegate> _delegate;
+  id<FBDialogDelegate> __unsafe_unretained _delegate;
   NSMutableDictionary *_params;
   NSString * _serverURL;
   NSURL* _loadingURL;
   UIWebView* _webView;
   UIActivityIndicatorView* _spinner;
-  UIImageView* _iconView;
-  UILabel* _titleLabel;
   UIButton* _closeButton;
-  UIDeviceOrientation _orientation;
+  UIInterfaceOrientation _orientation;
   BOOL _showingKeyboard;
 
   // Ensures that UI elements behind the dialog are disabled.
@@ -45,17 +43,12 @@
 /**
  * The delegate.
  */
-@property(nonatomic,assign) id<FBDialogDelegate> delegate;
+@property(nonatomic,unsafe_unretained) id<FBDialogDelegate> delegate;
 
 /**
  * The parameters.
  */
-@property(nonatomic, retain) NSMutableDictionary* params;
-
-/**
- * The title that is shown in the header atop the view.
- */
-@property(nonatomic,copy) NSString* title;
+@property(nonatomic, strong) NSMutableDictionary* params;
 
 - (NSString *) getStringFromUrl: (NSString*) url needle:(NSString *) needle;
 

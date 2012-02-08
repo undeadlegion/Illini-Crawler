@@ -19,12 +19,12 @@
     BOOL isResettingIndex;
 }
 
-@property (nonatomic, retain, readonly) UINavigationController *navigationController;
-@property (nonatomic, retain, readonly) NSArray *viewControllers;
-@property (nonatomic, retain) NSURL *serverURL;
-@property (nonatomic, retain) Event *currentEvent;
-@property (nonatomic, retain) NSDictionary *barsDictionary;
-@property (nonatomic, retain) UISegmentedControl *viewToggle;
+@property (nonatomic, strong, readonly) UINavigationController *navigationController;
+@property (nonatomic, strong, readonly) NSArray *viewControllers;
+@property (nonatomic, strong) NSURL *serverURL;
+@property (nonatomic, strong) Event *currentEvent;
+@property (nonatomic, strong) NSDictionary *barsDictionary;
+@property (nonatomic, strong) UISegmentedControl *viewToggle;
 
 - (id)initWithNavigationController:(UINavigationController *)navigationController
                viewControllers:(NSArray *)viewControllers;

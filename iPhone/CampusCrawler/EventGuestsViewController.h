@@ -16,7 +16,7 @@
 #define NOT_ATTENDING 2
 #define AWAITING_REPLY 3
 
-@interface EventGuestsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,FBSessionDelegate, FBRequestDelegate> {
+@interface EventGuestsViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, FBRequestDelegate> {
     BOOL retrievedResults;
     NSArray *alphabet;
     Facebook *facebook;
@@ -34,14 +34,14 @@
     NSInteger guestType;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *myTableView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
-@property (nonatomic, retain) NSArray *alphabet;
-@property (nonatomic, retain) NSArray *guests;
-@property (nonatomic, retain) NSArray *guestSectionSizes;
-@property (nonatomic, retain) NSArray *guestIndices;
-@property (nonatomic, retain) NSString *eventID;
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) IBOutlet UILabel *loadingLabel;
+@property (nonatomic, strong) NSArray *alphabet;
+@property (nonatomic, strong) NSArray *guests;
+@property (nonatomic, strong) NSArray *guestSectionSizes;
+@property (nonatomic, strong) NSArray *guestIndices;
+@property (nonatomic, strong) NSString *eventID;
 @property (nonatomic) NSInteger guestType;
 
 - (void)populateGuestsSectionAndIndices:(NSArray*)sortedGuests;

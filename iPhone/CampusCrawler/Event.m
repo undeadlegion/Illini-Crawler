@@ -15,15 +15,15 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if((self = [super init])){
-        eventId = [[aDecoder decodeObjectForKey:@"eventId"] retain];
-        creatorId = [[aDecoder decodeObjectForKey:@"creatorId"] retain];
+        eventId = [aDecoder decodeObjectForKey:@"eventId"];
+        creatorId = [aDecoder decodeObjectForKey:@"creatorId"];
         dateId = [aDecoder decodeObjectForKey:@"dateId"];
-        date = [[aDecoder  decodeObjectForKey:@"date"] retain];
-        title = [[aDecoder  decodeObjectForKey:@"title"] retain];
-        description = [[aDecoder decodeObjectForKey:@"description"] retain];
-        eventImage = [[aDecoder decodeObjectForKey:@"eventImage"] retain];
+        date = [aDecoder  decodeObjectForKey:@"date"];
+        title = [aDecoder  decodeObjectForKey:@"title"];
+        description = [aDecoder decodeObjectForKey:@"description"];
+        eventImage = [aDecoder decodeObjectForKey:@"eventImage"];
         privacy = [aDecoder decodeBoolForKey:@"privacy"];
-        barsForEvent = [[aDecoder decodeObjectForKey:@"barsForEvent"] retain];
+        barsForEvent = [aDecoder decodeObjectForKey:@"barsForEvent"];
     }
     return self;
 }
@@ -61,15 +61,4 @@
     else return NO;
 }
 
-- (void)dealloc{
-    [eventId release];
-    [creatorId release];
-    [dateId  release];
-    [date release];
-    [title release];
-    [description release];
-    [eventImage release];
-    [barsForEvent release];
-    [super dealloc];
-}
 @end

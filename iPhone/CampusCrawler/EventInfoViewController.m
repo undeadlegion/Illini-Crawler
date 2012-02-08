@@ -31,12 +31,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [dateFormatter release];
-    [currentEvent release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -62,7 +56,6 @@
     self.tableView.tableHeaderView = tableTitle;
     
     [self.tableView reloadData];
-    [tableTitle release];
 }
 
 - (void)viewDidUnload
@@ -127,11 +120,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         if (indexPath.section == EVENT_DETAILS) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
         }
         
         else {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
         }
     }
     
@@ -200,7 +193,6 @@
         else //for testing purposes
             selectGuestsViewController.eventID = @"201994573163915"; //Blackhawk Bar Crawl
         [self.navigationController pushViewController:selectGuestsViewController animated:YES];
-        [selectGuestsViewController release];
     }
     
     else if (indexPath.section == EVENT_WALL) {
@@ -210,7 +202,6 @@
         else //for testing purposes
             eventWallViewController.eventID = @"201994573163915"; //Blackhawk Bar Crawl
         [self.navigationController pushViewController:eventWallViewController animated:YES];
-        [eventWallViewController release];
     }
 }
 

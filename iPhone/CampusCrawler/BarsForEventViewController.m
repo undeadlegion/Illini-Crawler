@@ -30,18 +30,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [pastBars release];
-    [currentBars release];
-    [currentEvent release];
-    [serverURL release];
-    [barsDictionary release];
-    [dateFormatter release];
-    [refreshHeaderView release];
-    [lastUpdated release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -67,7 +55,6 @@
     view.delegate = self;
     [self.myTableView addSubview:view];
     refreshHeaderView = view;
-    [view release];
     
     self.myTableView.scrollEnabled = NO;
     self.lastUpdated = [NSDate date];
@@ -145,7 +132,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -196,15 +183,14 @@
     detailViewController.currentBar = [barsDictionary objectForKey:eventBar.barId];
     detailViewController.currentDateId = currentEvent.dateId;
     [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
     
 }
 
 #pragma mark - Instance Methods
 
 - (void)sortBarsForEvent{
-    self.pastBars = [[[NSMutableArray alloc] init] autorelease];
-    self.currentBars = [[[NSMutableArray alloc] init ] autorelease];
+    self.pastBars = [[NSMutableArray alloc] init];
+    self.currentBars = [[NSMutableArray alloc] init ];
     for (BarForEvent *bar in currentEvent.barsForEvent) {
         if([bar isPast]){
             [pastBars addObject:bar];
@@ -258,7 +244,7 @@
         NSLog(@"OK");
         
         //it's the day of
-        if(days == 0 || days == 1 && hours == 0){
+        if(days == 0 || (days == 1 && hours == 0)){
             NSLog(@"It's the day of");                  
             //schedule each of the bars
             UILocalNotification *notification;
@@ -276,7 +262,6 @@
                 infoDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Bar", @"Type", currentEvent.eventId, @"Id", message, @"Message", barForEvent.time, @"Time", nil];
                 notification.userInfo = infoDict;
                 [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-                [notification release];            
             }
             //10 minute warning
             if(minutes > 10){
@@ -293,7 +278,6 @@
                 notification.userInfo = infoDict;
                 
                 [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-                [notification release];
             }
             //15 minute warning
             if(minutes > 15){
@@ -309,7 +293,6 @@
                 notification.userInfo = infoDict;
                 
                 [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-                [notification release];
                 
             }
         }
@@ -332,43 +315,42 @@
     }
     NSLog(@"eventPath:%@", eventBarsPath);
     self.currentEvent.barsForEvent = [barsForEventFetcher fetchEventBarsFromPath:eventBarsPath relativeTo:serverURL withEvent:currentEvent isURL:useServer];
-    [barsForEventFetcher release];
 }
 
 
 - (void)spawnLoadingThread{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
+    @autoreleasepool {    
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        
-    NSLog(@"Checking Network...");
-    //network is okay
-    if([self isReachable]){
-        NSLog(@"Reachable");
-        [self loadBarsForEvent];
-        [self scheduleNotifications];
-        [self sortBarsForEvent];
-        [self updateBarSpecials];
-        self.lastUpdated = [NSDate date];
-    }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            
+        NSLog(@"Checking Network...");
+        //network is okay
+        if([self isReachable]){
+            NSLog(@"Reachable");
+            [self loadBarsForEvent];
+            [self scheduleNotifications];
+            [self sortBarsForEvent];
+            [self updateBarSpecials];
+            self.lastUpdated = [NSDate date];
+        }
 //network not working
-    else{
-        CampusCrawlerAppDelegate *delegate = (CampusCrawlerAppDelegate *)[[UIApplication sharedApplication] delegate];
-        [delegate showAlert:@"Network Connection Unavailable" withTitle:@"Connection Error"];
-    }
-    
-    //loading spawned from pull to refresh
-    if(isReloading){
-        while(!minimumWaitCompleted){}
-        [self doneLoadingTableViewData];
-    }
+        else{
+            CampusCrawlerAppDelegate *delegate = (CampusCrawlerAppDelegate *)[[UIApplication sharedApplication] delegate];
+            [delegate showAlert:@"Network Connection Unavailable" withTitle:@"Connection Error"];
+        }
+        
+        //loading spawned from pull to refresh
+        if(isReloading){
+            while(!minimumWaitCompleted){}
+            [self doneLoadingTableViewData];
+        }
 
-    //reset view
-    self.myTableView.scrollEnabled = YES;
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [myTableView reloadData];
+        //reset view
+        self.myTableView.scrollEnabled = YES;
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [myTableView reloadData];
     
-    [pool release];
+    }
 }
 
 - (BOOL)isReachable{

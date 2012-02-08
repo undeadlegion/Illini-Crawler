@@ -28,9 +28,9 @@
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;
-@property (nonatomic, retain) UIImage *eventImage;
+@property (nonatomic, strong) UIImage *eventImage;
 @property (nonatomic, getter = isPrivate) BOOL privacy;
-@property (nonatomic, retain) NSArray *barsForEvent;
+@property (nonatomic, strong) NSArray *barsForEvent;
 
 - (BOOL)isPast;
 @end

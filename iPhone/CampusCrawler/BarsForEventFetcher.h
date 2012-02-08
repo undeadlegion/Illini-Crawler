@@ -24,7 +24,7 @@
 - (NSArray *)fetchEventBarsFromPath:(NSString *)path relativeTo:(NSURL *)baseURL withEvent:(Event *)event isURL:(BOOL)url;
 - (void)parseXMLFile:(NSString *)pathToFile relativeTo:(NSURL *)baseURL isURL:(BOOL)url;
 
-@property (nonatomic, retain) Event *currentEvent;
-@property (nonatomic, retain) NSDateComponents *currentEventDateComponents;
+@property (nonatomic, strong) Event *currentEvent;
+@property (nonatomic, strong) NSDateComponents *currentEventDateComponents;
 
 @end

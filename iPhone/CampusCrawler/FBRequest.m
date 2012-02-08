@@ -23,10 +23,16 @@
 static NSString* kUserAgent = @"FacebookConnect";
 static NSString* kStringBoundary = @"3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f";
 static const int kGeneralErrorCode = 10000;
+static const int kRESTAPIAccessTokenErrorCode = 190;
 
 static const NSTimeInterval kTimeoutInterval = 180.0;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@interface FBRequest ()
+@property (nonatomic,readwrite) FBRequestState state;
+@property (nonatomic,readwrite) BOOL sessionDidExpire;
+@end
 
 @implementation FBRequest
 
@@ -35,8 +41,10 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
             httpMethod = _httpMethod,
             params = _params,
             connection = _connection,
-            responseText = _responseText;
-
+            responseText = _responseText,
+            state = _state,
+            sessionDidExpire = _sessionDidExpire,
+            error = _error;
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
@@ -45,7 +53,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
                            delegate:(id<FBRequestDelegate>) delegate
                          requestURL:(NSString *) url {
 
-  FBRequest* request = [[[FBRequest alloc] init] autorelease];
+  FBRequest* request = [[FBRequest alloc] init];
   request.delegate = delegate;
   request.url = url;
   request.httpMethod = httpMethod;
@@ -84,15 +92,14 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
       continue;
     }
 
-    NSString* escaped_value = (NSString *)CFURLCreateStringByAddingPercentEscapes(
+    NSString* escaped_value = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(
                                 NULL, /* allocator */
-                                (CFStringRef)[params objectForKey:key],
+                                (__bridge CFStringRef)[params objectForKey:key],
                                 NULL, /* charactersToLeaveUnescaped */
                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]",
                                 kCFStringEncodingUTF8);
 
     [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
-    [escaped_value release];
   }
   NSString* query = [pairs componentsJoinedByString:@"&"];
 
@@ -177,10 +184,9 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
  */
 - (id)parseJsonResponse:(NSData *)data error:(NSError **)error {
 
-  NSString* responseString = [[[NSString alloc] initWithData:data
-                                                    encoding:NSUTF8StringEncoding]
-                              autorelease];
-  SBJSON *jsonParser = [[SBJSON new] autorelease];
+  NSString* responseString = [[NSString alloc] initWithData:data
+                                                    encoding:NSUTF8StringEncoding];
+  SBJSON *jsonParser = [SBJSON new];
   if ([responseString isEqualToString:@"true"]) {
     return [NSDictionary dictionaryWithObject:@"true" forKey:@"result"];
   } else if ([responseString isEqualToString:@"false"]) {
@@ -234,6 +240,9 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
  *                          fails with error
  */
 - (void)failWithError:(NSError *)error {
+  if ([error code] == kRESTAPIAccessTokenErrorCode) {
+    self.sessionDidExpire = YES;
+  }
   if ([_delegate respondsToSelector:@selector(request:didFailWithError:)]) {
     [_delegate request:self didFailWithError:error];
   }
@@ -247,12 +256,14 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
       @selector(request:didLoadRawResponse:)]) {
     [_delegate request:self didLoadRawResponse:data];
   }
+    
+  NSError* error = nil;
+  id result = [self parseJsonResponse:data error:&error];
+  self.error = error;  
 
   if ([_delegate respondsToSelector:@selector(request:didLoad:)] ||
       [_delegate respondsToSelector:
           @selector(request:didFailWithError:)]) {
-    NSError* error = nil;
-    id result = [self parseJsonResponse:data error:&error];
 
     if (error) {
       [self failWithError:error];
@@ -304,7 +315,8 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
   }
 
   _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-
+  self.state = kFBRequestStateLoading;
+  self.sessionDidExpire = NO;
 }
 
 /**
@@ -312,12 +324,6 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
  */
 - (void)dealloc {
   [_connection cancel];
-  [_connection release];
-  [_responseText release];
-  [_url release];
-  [_httpMethod release];
-  [_params release];
-  [super dealloc];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -345,19 +351,17 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
   [self handleResponseData:_responseText];
 
-  [_responseText release];
-  _responseText = nil;
-  [_connection release];
-  _connection = nil;
+  self.responseText = nil;
+  self.connection = nil;
+  self.state = kFBRequestStateComplete;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
   [self failWithError:error];
 
-  [_responseText release];
-  _responseText = nil;
-  [_connection release];
-  _connection = nil;
+  self.responseText = nil;
+  self.connection = nil;
+  self.state = kFBRequestStateComplete;
 }
 
 @end

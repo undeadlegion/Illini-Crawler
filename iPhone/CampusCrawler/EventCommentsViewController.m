@@ -22,11 +22,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [myTableView release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -156,7 +151,7 @@
         CGFloat height = [self getMessageHeight:wallPost.message];
         messageLabel.frame = CGRectMake(20, 25, 270, height);
         
-        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"eee, MMM dd 'at' hh:mm a"];
         UILabel *dateLabel = (UILabel*)[cell viewWithTag:3];
         dateLabel.text = [df stringFromDate:wallPost.date];
@@ -174,7 +169,7 @@
         CGFloat height = [self getMessageHeight:commentPost.message];
         messageLabel.frame = CGRectMake(20, 25, 270, height);
         
-        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"eee, MMM dd 'at' hh:mm a"];
         UILabel *dateLabel = (UILabel*)[cell viewWithTag:3];
         dateLabel.text = [df stringFromDate:commentPost.date];
@@ -198,7 +193,7 @@
         id commentMessage = [curComments objectForKey:@"message"];
         id commentDateStr = [curComments objectForKey:@"created_time"];
         
-        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZZ"];
         NSDate *commentDate = [df dateFromString:commentDateStr];
         FeedPost *commentPost = [[FeedPost alloc] init];
@@ -209,7 +204,6 @@
         [commentsArray addObject:commentPost];
     }
     
-    [wallPost.comments release];
     wallPost.comments = nil;
     
     wallPost.comments = [commentsArray copy];
@@ -224,22 +218,22 @@
 #pragma mark - Instance Methods
 
 - (void)loadComments {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
+    @autoreleasepool {    
     
-    NSLog(@"Requesting from facebook");
-    
-    while (!retrievedResults) {
-        //        NSLog(@"waiting...");
+        NSLog(@"Requesting from facebook");
+        
+        while (!retrievedResults) {
+            //        NSLog(@"waiting...");
+        }
+        
+        NSLog(@"Done Requesting from facebook");
+        
+        [myTableView reloadData];
+        
+        [spinner stopAnimating];
+        spinner.hidden = YES;
+        loadingLabel.hidden = YES;
     }
-    
-    NSLog(@"Done Requesting from facebook");
-    
-    [myTableView reloadData];
-    
-    [spinner stopAnimating];
-    spinner.hidden = YES;
-    loadingLabel.hidden = YES;
-    [pool release];
 }
 
 @end

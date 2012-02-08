@@ -71,10 +71,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 #pragma mark - Facebook
 /**
@@ -97,17 +93,17 @@
  */
 - (void)login {
     //view permissions at http://developers.facebook.com/docs/authentication/permissions/
-    NSArray* permissions =  [[NSArray arrayWithObjects:
-                              @"user_events",  nil] retain];//@"offline_access",
+    NSArray* permissions =  [NSArray arrayWithObjects:
+                              @"user_events",  nil];//@"offline_access",
     
-    [facebook authorize:permissions delegate:self];
+    [facebook authorize:permissions];
 }
 
 /**
  * Invalidate the access token and clear the cookie.
  */
 - (void)logout {
-    [facebook logout:self];
+    [facebook logout];
 }
 /**
  * Called on a login/logout button click.
@@ -135,7 +131,7 @@
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         }
         
         return cell;
@@ -146,7 +142,7 @@
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         }
         
         if (indexPath.row < [wallPosts count]) {

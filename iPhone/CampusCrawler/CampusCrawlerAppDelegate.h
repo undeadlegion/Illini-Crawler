@@ -11,15 +11,15 @@
 #import "FBConnect.h"   
 
 @class Event, Reachability;
-@interface CampusCrawlerAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, FBSessionDelegate> {
+@interface CampusCrawlerAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     Facebook *facebook;
     NSDictionary *barsDictionary;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) Facebook *facebook;
-@property (nonatomic, retain) NSDictionary *barsDictionary;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, strong) Facebook *facebook;
+@property (nonatomic, strong) NSDictionary *barsDictionary;
 - (void)loadBars;
 - (void)showAlert:(NSString*)pushmessage withTitle:(NSString*)title;
 - (void)spawnLoadingThread;

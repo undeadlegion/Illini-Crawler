@@ -33,25 +33,6 @@
 }
 
 
-- (void)dealloc
-{
-    [eventsList release];
-    [currentEvents release];
-    [pastEvents release];
-    [barsDictionary release];
-    [dateFormatter release];
-    [eventSegmentsController release];
-    [facebook release];
-    [fbLoginButton release];
-    [myTableView release];
-    [loadingLabel release];
-    [spinner release];    
-    [facebookView release];
-    [combinedView release];
-    [refreshHeaderView release];
-    [lastUpdated release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -85,7 +66,6 @@
     view.delegate = self;
     [self.myTableView addSubview:view];
     refreshHeaderView = view;
-    [view release];
 
     self.myTableView.scrollEnabled = NO;
     
@@ -97,8 +77,8 @@
     //set facebook object
     CampusCrawlerAppDelegate *appDelegate = (CampusCrawlerAppDelegate*)[[UIApplication sharedApplication] delegate];
     facebook = appDelegate.facebook;
-    [facebook retain];
-    
+    facebook.sessionDelegate = self;
+
     currentEvents = [[NSMutableArray alloc] init ];
     pastEvents = [[NSMutableArray alloc] init ];
     
@@ -193,7 +173,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     Event *cellEvent;
     if(indexPath.section == kCurrentSection)
@@ -246,10 +226,10 @@
 }
 - (IBAction)fbButtonClick:(id)sender {
     //login to facebook
-    NSArray* permissions =  [[NSArray arrayWithObjects:
-                              @"user_events",  nil] retain];//@"offline_access",
+    NSArray* permissions =  [NSArray arrayWithObjects:
+                              @"user_events",  nil];//@"offline_access",
     
-    [facebook authorize:permissions delegate:self];
+    [facebook authorize:permissions];
 }
 //request completed 
 //can be dict, array, string ,or number
@@ -268,6 +248,14 @@
     NSLog(@"Request Failed");
 }
 
+- (void)fbSessionInvalidated{
+    NSLog(@"Fb Session Invalidated");
+}
+
+- (void)fbDidExtendToken:(NSString*)accessToken
+               expiresAt:(NSDate*)expiresAt{
+    NSLog(@"Fb Did Extend Token");
+}
 
 #pragma mark - 
 #pragma mark Data Loading
@@ -275,7 +263,7 @@
 - (void)loadEvents{
     NSString *eventsPath;
     NSURL *serverURL = [NSURL URLWithString:serverString];
-    EventsFetcher *eventsFetcher = [[[EventsFetcher alloc] init] autorelease];
+    EventsFetcher *eventsFetcher = [[EventsFetcher alloc] init];
 
     //load data from server
     if(useServer){
@@ -305,38 +293,38 @@
 }
 
 - (void)spawnLoadingThread{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    NSLog(@"Checking Network...");
-    //network is okay
-    if([self isReachable]){
-        NSLog(@"Reachable");
-        [self loadEvents];
-        self.lastUpdated = [NSDate date];
-        [self sortEvents];
-    }
-    //network not working
-    else{
-        CampusCrawlerAppDelegate *delegate = (CampusCrawlerAppDelegate *)[[UIApplication sharedApplication] delegate];
-        [delegate showAlert:@"Network Connection Unavailable" withTitle:@"Connection Error"];
-    }
-    
-    //loading spawned from pull to refresh
-    if(isReloading){
-        while(!minimumWaitCompleted){}
-        [self doneLoadingTableViewData];
-    }
-    
-    //reset everything in the view
-    [spinner stopAnimating];
-    spinner.hidden = YES;
-    loadingLabel.hidden = YES;
-    self.myTableView.scrollEnabled = YES;
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [myTableView reloadData];
+    @autoreleasepool {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        NSLog(@"Checking Network...");
+        //network is okay
+        if([self isReachable]){
+            NSLog(@"Reachable");
+            [self loadEvents];
+            self.lastUpdated = [NSDate date];
+            [self sortEvents];
+        }
+        //network not working
+        else{
+            CampusCrawlerAppDelegate *delegate = (CampusCrawlerAppDelegate *)[[UIApplication sharedApplication] delegate];
+            [delegate showAlert:@"Network Connection Unavailable" withTitle:@"Connection Error"];
+        }
+        
+        //loading spawned from pull to refresh
+        if(isReloading){
+            while(!minimumWaitCompleted){}
+            [self doneLoadingTableViewData];
+        }
+        
+        //reset everything in the view
+        [spinner stopAnimating];
+        spinner.hidden = YES;
+        loadingLabel.hidden = YES;
+        self.myTableView.scrollEnabled = YES;
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [myTableView reloadData];
 
-    [pool release];
+    }
 }
 
 - (BOOL)isReachable{
@@ -368,8 +356,8 @@
 
 
 - (void)sortEvents{
-    self.pastEvents = [[[NSMutableArray alloc] init] autorelease];
-    self.currentEvents = [[[NSMutableArray alloc] init] autorelease];
+    self.pastEvents = [[NSMutableArray alloc] init];
+    self.currentEvents = [[NSMutableArray alloc] init];
     for (Event *event in eventsList) {
         if([event isPast]){
             [pastEvents insertObject:event atIndex:0];

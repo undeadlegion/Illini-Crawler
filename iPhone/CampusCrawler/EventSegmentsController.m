@@ -14,8 +14,8 @@
 #import "Constants.h"
 
 @interface EventSegmentsController ()
-@property (nonatomic, retain, readwrite) UINavigationController *navigationController;
-@property (nonatomic, retain, readwrite) NSArray *viewControllers;
+@property (nonatomic, strong, readwrite) UINavigationController *navigationController;
+@property (nonatomic, strong, readwrite) NSArray *viewControllers;
 @end
 
 @implementation EventSegmentsController
@@ -91,21 +91,11 @@
 }
 
 - (void)initSegmentViewControllers{
-    BarsForEventViewController *detailViewController = [[[BarsForEventViewController alloc] initWithNibName:@"BarsForEventViewController" bundle:nil] autorelease];
-    EventInfoViewController *infoViewController = [[[EventInfoViewController alloc] initWithNibName:@"EventInfoViewController" bundle:nil] autorelease];
-    EventMapViewController *mapViewController = [[[EventMapViewController alloc] initWithNibName:@"EventMapViewController" bundle:nil] autorelease];
+    BarsForEventViewController *detailViewController = [[BarsForEventViewController alloc] initWithNibName:@"BarsForEventViewController" bundle:nil];
+    EventInfoViewController *infoViewController = [[EventInfoViewController alloc] initWithNibName:@"EventInfoViewController" bundle:nil];
+    EventMapViewController *mapViewController = [[EventMapViewController alloc] initWithNibName:@"EventMapViewController" bundle:nil];
     
     viewControllers = [[NSArray alloc] initWithObjects:detailViewController,infoViewController, mapViewController,nil];
 }
 
-- (void)dealloc
-{
-    [navigationController release];
-    [viewControllers release];
-    [serverURL release];
-    [currentEvent release];
-    [barsDictionary release];
-    [viewToggle release];
-    [super dealloc];
-}
 @end

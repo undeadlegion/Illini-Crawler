@@ -22,10 +22,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -83,7 +79,7 @@
         
 
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
-    [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:nil startImmediately:YES]autorelease];
+    [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
 
 }
 

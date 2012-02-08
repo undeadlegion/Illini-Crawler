@@ -14,7 +14,7 @@
 #define POST_TO_WALL 0
 #define WALL_POSTS 1
 
-@interface EventWallViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, FBSessionDelegate, FBRequestDelegate, FBDialogDelegate> {
+@interface EventWallViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, FBRequestDelegate, FBDialogDelegate> {
     NSMutableArray *wallPosts;
     BOOL retrievedResults;
     
@@ -27,11 +27,11 @@
     NSString *eventID;
 }
 
-@property (nonatomic, retain) IBOutlet UITableViewCell *wallPostCell;
-@property (nonatomic, retain) IBOutlet UITableView *myTableView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *spinner;
-@property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
-@property (nonatomic, retain) NSString *eventID;
+@property (nonatomic, strong) IBOutlet UITableViewCell *wallPostCell;
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) IBOutlet UILabel *loadingLabel;
+@property (nonatomic, strong) NSString *eventID;
 
 - (IBAction)commentsButtonClick:(id)sender;
 

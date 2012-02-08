@@ -28,7 +28,7 @@
     NSDateFormatter *dateFormatter;
     NSDateFormatter *timeFormatter;
 }
-@property (nonatomic, retain) Event *currentEvent;
+@property (nonatomic, strong) Event *currentEvent;
 @property (nonatomic, copy) NSURL *serverURL;
 //@property (nonatomic, retain) UISegmentedControl *viewToggle;
 

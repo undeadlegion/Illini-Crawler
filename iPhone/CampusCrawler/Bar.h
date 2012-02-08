@@ -31,10 +31,10 @@
 @property (nonatomic, copy) NSString *website;
 @property (nonatomic, copy) NSString *quickLogoPath;
 @property (nonatomic, copy) NSString *detailedLogoPath;
-@property (nonatomic, retain) UIImage *quickLogo;
-@property (nonatomic, retain) UIImage *detailedLogo;
+@property (nonatomic, strong) UIImage *quickLogo;
+@property (nonatomic, strong) UIImage *detailedLogo;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic, retain) NSMutableDictionary *specials;
+@property (nonatomic, strong) NSMutableDictionary *specials;
 @property (nonatomic) double longitude;
 @property (nonatomic) double latitude;
 @end

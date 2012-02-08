@@ -19,20 +19,31 @@
 
 @protocol FBRequestDelegate;
 
+enum {
+  kFBRequestStateReady,
+  kFBRequestStateLoading,
+  kFBRequestStateComplete,
+  kFBRequestStateError
+};
+typedef NSUInteger FBRequestState;
+
 /**
  * Do not use this interface directly, instead, use method in Facebook.h
  */
 @interface FBRequest : NSObject {
-  id<FBRequestDelegate> _delegate;
+  id<FBRequestDelegate> __unsafe_unretained _delegate;
   NSString*             _url;
   NSString*             _httpMethod;
   NSMutableDictionary*  _params;
   NSURLConnection*      _connection;
   NSMutableData*        _responseText;
+  FBRequestState        _state;
+  NSError*              _error;
+  BOOL                  _sessionDidExpire;
 }
 
 
-@property(nonatomic,assign) id<FBRequestDelegate> delegate;
+@property(nonatomic,unsafe_unretained) id<FBRequestDelegate> delegate;
 
 /**
  * The URL which will be contacted to execute the request.
@@ -50,9 +61,16 @@
  * These values in the dictionary will be converted to strings using the
  * standard Objective-C object-to-string conversion facilities.
  */
-@property(nonatomic,retain) NSMutableDictionary* params;
-@property(nonatomic,assign) NSURLConnection*  connection;
-@property(nonatomic,assign) NSMutableData* responseText;
+@property(nonatomic,strong) NSMutableDictionary* params;
+@property(nonatomic,strong) NSURLConnection*  connection;
+@property(nonatomic,strong) NSMutableData* responseText;
+@property(nonatomic,readonly) FBRequestState state;
+@property(nonatomic,readonly) BOOL sessionDidExpire;
+
+/**
+ * Error returned by the server in case of request's failure (or nil otherwise).
+ */
+@property(nonatomic,strong) NSError* error;
 
 
 + (NSString*)serializeURL:(NSString *)baseUrl

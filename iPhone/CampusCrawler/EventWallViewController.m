@@ -24,13 +24,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [myTableView release];
-    [spinner release];
-    [loadingLabel release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -151,7 +144,7 @@
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         
 //        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -200,7 +193,7 @@
                 CGFloat height = [self getMessageHeight:cellWallPost.message];
                 messageLabel.frame = CGRectMake(20, 25, 270, height);
                 
-                NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+                NSDateFormatter *df = [[NSDateFormatter alloc] init];
                 [df setDateFormat:@"eee, MMM dd 'at' hh:mm a"];
                 UILabel *dateLabel = (UILabel*)[cell viewWithTag:3];
                 dateLabel.text = [df stringFromDate:cellWallPost.date];
@@ -269,7 +262,7 @@
         id dateStr = [wallPostings objectForKey:@"created_time"];
         
         //2011-02-05T23:05:26+0000
-        NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZZ"];
         NSDate *date = [df dateFromString:dateStr];
         WallPost *curPost = [[WallPost alloc] init];
@@ -307,7 +300,6 @@
         
         [wallPosts addObject:curPost];
         
-        [curPost release];
     }
     
     retrievedResults = YES;
@@ -320,22 +312,22 @@
 #pragma mark - Instance Methods
 
 - (void)loadWall {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
+    @autoreleasepool {    
     
-    NSLog(@"Requesting from facebook");
-    
-    while (!retrievedResults) {
-        //        NSLog(@"waiting...");
+        NSLog(@"Requesting from facebook");
+        
+        while (!retrievedResults) {
+            //        NSLog(@"waiting...");
+        }
+        
+        NSLog(@"Done Requesting from facebook");
+        
+        [myTableView reloadData];
+        
+        [spinner stopAnimating];
+        spinner.hidden = YES;
+        loadingLabel.hidden = YES;
     }
-    
-    NSLog(@"Done Requesting from facebook");
-    
-    [myTableView reloadData];
-    
-    [spinner stopAnimating];
-    spinner.hidden = YES;
-    loadingLabel.hidden = YES;
-    [pool release];
 }
 
 #pragma mark - Event Methods
@@ -352,7 +344,6 @@
     
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:eventCommentsViewController animated:YES];
-    [eventCommentsViewController release];
 }
 
 @end

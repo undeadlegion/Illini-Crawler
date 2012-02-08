@@ -17,6 +17,6 @@
     NSString *eventID;
 }
 
-@property (nonatomic,retain) NSString *eventID;
+@property (nonatomic,strong) NSString *eventID;
 
 @end

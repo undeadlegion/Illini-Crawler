@@ -26,12 +26,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [barsDictionary release];
-    [mapView release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -95,7 +89,6 @@
     for (Bar *bar in barAnnotations) {
         [mapView removeAnnotation:bar];
     }
-    [barAnnotations release];
 }
 
 #pragma mark - Map Kit Delegate
@@ -114,8 +107,8 @@
         if (!pinView)
         {
             // if an existing pin view was not available, create one
-            MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
-                                                   initWithAnnotation:annotation reuseIdentifier:BarAnnotationIdentifier] autorelease];
+            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
+                                                   initWithAnnotation:annotation reuseIdentifier:BarAnnotationIdentifier];
             customPinView.pinColor = MKPinAnnotationColorGreen;
             customPinView.animatesDrop = YES;
             customPinView.canShowCallout = YES;
@@ -148,7 +141,6 @@
     detailViewController.currentDateId = currentEvent.dateId;
 
     [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

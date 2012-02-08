@@ -12,7 +12,7 @@
 
 #import "FBConnect.h"
 
-@interface SecondViewController : UIViewController <FBSessionDelegate, FBRequestDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface SecondViewController : UIViewController <FBRequestDelegate, UITableViewDelegate, UITableViewDataSource> {
     
     FBLoginButton *fbLoginButton;
     Facebook *facebook;
@@ -24,10 +24,10 @@
     NSMutableArray *wallPosts;
     WallPost *currentWallPost;
 }
-@property (nonatomic, retain) IBOutlet UITableView *myTableView;
-@property (nonatomic, retain) IBOutlet FBLoginButton *fbLoginButton;
-@property (nonatomic, retain) Facebook *facebook;
-@property (nonatomic, retain) IBOutlet UIButton *profileButton;
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
+@property (nonatomic, strong) IBOutlet FBLoginButton *fbLoginButton;
+@property (nonatomic, strong) Facebook *facebook;
+@property (nonatomic, strong) IBOutlet UIButton *profileButton;
 
 - (IBAction)fbButtonClick:(id)sender;
 - (IBAction)profileButtonClick:(id)sender;

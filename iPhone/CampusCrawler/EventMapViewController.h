@@ -20,11 +20,11 @@
     NSMutableArray *barAnnotations;
 }
 
-@property (nonatomic, retain) Event *currentEvent;
+@property (nonatomic, strong) Event *currentEvent;
 @property (nonatomic, copy) NSURL *serverURL;
-@property (nonatomic, retain) UISegmentedControl *viewToggle;
-@property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) NSDictionary *barsDictionary;
+@property (nonatomic, strong) UISegmentedControl *viewToggle;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) NSDictionary *barsDictionary;
 
 - (void)showDetails:(id)sender;
 @end

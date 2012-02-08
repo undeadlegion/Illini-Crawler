@@ -14,8 +14,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if((self = [super init])){
-        barId = [[aDecoder decodeObjectForKey:@"barId"] retain];
-        time = [[aDecoder decodeObjectForKey:@"time"] retain];
+        barId = [aDecoder decodeObjectForKey:@"barId"];
+        time = [aDecoder decodeObjectForKey:@"time"];
 
     }
     return self;
@@ -45,10 +45,4 @@
     return NO;
 }
 
-- (void)dealloc{
-    [barId release];
-    [time release];
-    [specials release];
-    [super dealloc];
-}
 @end
